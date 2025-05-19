@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C-Salt Consulting Brand Identity</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap">
+    <style>
+        /* Custom Fonts */
+        @font-face {
+            font-family: 'Belgiano Serif';
+            src: url('https://cdn.jsdelivr.net/gh/octoshrimpy/blokkfont@main/fonts/Belgiano.otf');
+            font-weight: normal;
+            font-style: normal;
+        }
+        
+        @font-face {
+            font-family: 'Louis George Café';
+            src: url('https://cdn.jsdelivr.net/gh/AllThingsSmitty/fonts@master/louis-george-cafe/louis-george-cafe.ttf');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            background-color: #FAFAFA;
+            color: #333;
+            font-family: 'Work Sans', sans-serif;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .section {
+            margin-bottom: 5rem;
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.05);
+            background-color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 5px;
+            width: 100%;
+        }
+        
+        .coastal-clarity::before {
+            background: linear-gradient(to right, #0b1e33, #00537a, #f5a201);
+        }
+        
+        .rooted-radiance::before {
+            background: linear-gradient(to right, #0b1e33, #013c58, #f5a201, #C36A4E);
+        }
+        
+        .elevated-essence::before {
+            background: linear-gradient(to right, #003153, #E9C46A, #B3583F);
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: currentColor;
+        }
+        
+        .color-swatch {
+            height: 100px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 12px;
+            transition: transform 0.3s ease;
+        }
+        
+        .color-swatch:hover {
+            transform: translateY(-5px);
+        }
+        
+        .font-display {
+            margin-top: 3rem;
+            padding: 2rem;
+            border-radius: 8px;
+            background-color: #f5f5f4;
+        }
+        
+        .preview-section {
+            margin-top: 3rem;
+            padding: 3rem;
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cc-heading {
+            font-family: 'Cormorant Garamond', serif;
+        }
+        
+        .cc-body {
+            font-family: 'Work Sans', sans-serif;
+        }
+        
+        .rr-heading {
+            font-family: 'Cinzel', serif;
+        }
+        
+        .rr-body {
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .ee-heading {
+            font-family: 'Belgiano Serif', serif;
+        }
+        
+        .ee-body {
+            font-family: 'Louis George Café', sans-serif;
+        }
+        
+        .swatch-name {
+            color: white;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+            font-weight: 500;
+        }
+        
+        .swatch-hex {
+            color: rgba(255, 255, 255, 0.9);
+            font-family: monospace;
+            font-size: 0.85rem;
+        }
+        
+        .dark-text .swatch-name,
+        .dark-text .swatch-hex {
+            color: #333;
+            text-shadow: none;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 500;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .btn-cc {
+            background-color: #f5a201;
+            color: white;
+        }
+        
+        .btn-cc:hover {
+            background-color: #e09400;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(245, 162, 1, 0.3);
+        }
+        
+        .btn-rr {
+            background-color: #013c58;
+            color: white;
+        }
+        
+        .btn-rr:hover {
+            background-color: #012b40;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(1, 60, 88, 0.3);
+        }
+        
+        .btn-ee {
+            background-color: #003153;
+            color: white;
+        }
+        
+        .btn-ee:hover {
+            background-color: #00243e;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 49, 83, 0.3);
+        }
+        
+        .hero-section {
+            position: relative;
+            padding: 3rem;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .fade-line {
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.1), transparent);
+            margin: 2rem 0;
+        }
+        
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animated {
+            animation: fadeIn 0.8s ease forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="text-center py-12">
+            <div class="inline-block relative">
+                <h1 class="text-5xl font-bold mb-2">C-Salt Consulting</h1>
+                <div class="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-blue-900 via-blue-600 to-yellow-500"></div>
+            </div>
+            <p class="text-xl mt-6 text-gray-600 max-w-3xl mx-auto">Brand Identity Presentation Board</p>
+        </header>
+        
+        <!-- COASTAL CLARITY -->
+        <section class="section coastal-clarity animated">
+            <h2 class="section-title cc-heading text-blue-900">Identity Option 1: Coastal Clarity</h2>
+            
+            <!-- Color Palette -->
+            <div>
+                <h3 class="text-xl font-semibold mb-4">Color Palette</h3>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-4">
+                    <div class="color-swatch" style="background-color: #0b1e33;">
+                        <span class="swatch-name">Deep Navy</span>
+                        <span class="swatch-hex">#0b1e33</span>
+                    </div>
+                    <div class="color-swatch" style="background-color: #013c58;">
+                        <span class="swatch-name">Ocean Blue</span>
+                        <span class="swatch-hex">#013c58</span>
+                    </div>
+                    <div class="color-swatch" style="background-color: #00537a;">
+                        <span class="swatch-name">Sea Blue</span>
+                        <span class="swatch-hex">#00537a</span>
+                    </div>
+                    <div class="color-swatch" style="background-color: #f5a201;">
+                        <span class="swatch-name">Golden Flame</span>
+                        <span class="swatch-hex">#f5a201</span>
+                    </div>
+                    <div class="color-swatch" style="background-color: #ffba42;">
+                        <span class="swatch-name">Sunlight Amber</span>
+                        <span class="swatch-hex">#ffba42</span>
+                    </div>
+                    <div class="color-swatch" style="background-color: #B0B4B9;">
+                        <span class="swatch-name">Neutral Gray</span>
+                        <span class="swatch-hex">#B0B4B9</span>
+                    </div>
+                    <div class="color-swatch" style="background-color: #D4E4E9;">
+                        <span class="swatch-name dark-text">Soft Aqua Gray</span>
+                        <span class="swatch-hex dark-text">#D4E4E9</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Font Pairing -->
+            <div class="font-display animated delay-1">
+                <h3 class="text-xl font-semibold mb-4">Font Pairing</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="text-lg font-medium mb-3">Heading Font: Cormorant Garamond</h4>
+                        <div class="p-4 bg-white rounded-lg shadow-sm">
+                            <p class="cc-heading text-4xl font-semibold">Cormorant Garamond</p>
+                            <p class="cc-heading text-2xl mt-2">ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
+                            <p class="cc-heading text-xl mt-1">abcdefghijklmnopqrstuvwxyz</p>
+                            <p class="cc-heading text-xl mt-1">0123456789</p>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-medium mb-3">Body Font: Work Sans</h4>
+                        <div class="p-4 bg-white rounded-lg shadow-sm">
+                            <p class="cc-body text-2xl font-normal">Work Sans</p>
+                            <p class="cc-body text-lg mt-2">ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
+                            <p class="cc-body text-lg mt-1">abcdefghijklmnopqrstuvwxyz</p>
+                            <p class="cc-body text-lg mt-1">0123456789</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Preview Section -->
+            <div class="preview-section animated delay-2" style="background-color: #F5F5F4;">
+                <h3 class="text-xl font-semibold mb-6">Preview Layout</h3>
+                
+                <div class="hero-section" style="background-color: white; border: 1px solid #eaeaea;">
+                    <div class="hero-content text-center">
+                        <h2 class="cc-heading text-4xl md:text-5xl font-bold mb-4" style="color: #0b1e33;">Your Next Move Starts Here</h2>
+                        <p class="cc-body text-lg md:text-xl mb-8 max-w-2xl mx-auto" style="color: #013c58;">
+                            Strategic consulting for businesses ready to navigate change with confidence and clarity. We help you chart a course to sustainable success.
+                        </p>
+                        <a href="#" class="btn btn-cc">Explore Services</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ROOTED RADIANCE -->
+        <section class="section rooted-radiance animated">
+            <h2 class="section-title rr-heading text-blue-900">Identity Option 2: Rooted Radiance</h2>
+            
+            <!-- Color Palette -->
+            <div>
+                <h3 class="text-xl font-semibold mb-4">Color Palette</h3>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                    <div class="color-swatch" style="background-color: #0b1e33;">
+                        <span class="swatch-name">Deep Navy</span>
+                        <span class="swatch-hex">#0b1e33</span>
+                    </div>
+                    <div class="color-swatch" style="background-color: #013c58;">
+                        <span class="swatch-name">Ocean Blue</span>
+                        <span class="swatch-hex">#013c58</span>
+                    </div>
+                    <div class="color-swatch" style="background-color: #f5a201;">
+                        <span class="swatch-name">Golden Flame</span>
+                        <span class="swatch-hex">#f5a201</span>
+                    </div>
+                    <div class="color-swatch" style="background-color: #ffba42;">
+                        <span class="swatch-name">Sunlight Amber</span>
+                        <span class="swatch-hex">#ffba42</span>
+                    </div>
+                    <div class="color-swatch" style="background-color: #C36A4E;">
+                        <span class="swatch-name">Terracotta</span>
+                        <span class="swatch-hex">#C36A4E</span>
+                    </div>
+                    <div class="color-swatch" style="background-color: #333333;">
+                        <span class="swatch-name">Charcoal Gray</span>
+                        <span class="swatch-hex">#333333</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Font Pairing -->
+            <div class="font-display animated delay-1">
+                <h3 class="text-xl font-semibold mb-4">Font Pairing</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="text-lg font-medium mb-3">Heading Font: Cinzel</h4>
+                        <div class="p-4 bg-white rounded-lg shadow-sm">
+                            <p class="rr-heading text-4xl font-semibold">Cinzel</p>
+                            <p class="rr-heading text-2xl mt-2">ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
+                            <p class="rr-heading text-xl mt-1">abcdefghijklmnopqrstuvwxyz</p>
+                            <p class="rr-heading text-xl mt-1">0123456789</p>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-medium mb-3">Body Font: Montserrat</h4>
+                        <div class="p-4 bg-white rounded-lg shadow-sm">
+                            <p class="rr-body text-2xl font-normal">Montserrat</p>
+                            <p class="rr-body text-lg mt-2">ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
+                            <p class="rr-body text-lg mt-1">abcdefghijklmnopqrstuvwxyz</p>
+                            <p class="rr-body text-lg mt-1">0123456789</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Preview Section -->
+            <div class="preview-section animated delay-2" style="background-color: #FFFFFF;">
+                <h3 class="text-xl font-semibold mb-6">Preview Layout</h3>
+                
+                <div class="hero-section" style="background-color: white; border: 1px solid #eaeaea;">
+                    <div class="hero-content text-center">
+                        <h2 class="rr-heading text-4xl md:text-5xl font-bold mb-4" style="color: #0b1e33;">Your Next Move Starts Here</h2>
+                        <p class="rr-body text-lg md:text-xl mb-8 max-w-2xl mx-auto" style="color: #333333;">
+                            Grounded strategies for businesses seeking transformative growth. We help you build on your strengths while reaching for new horizons.
+                        </p>
+                        <a href="#" class="btn btn-rr">Explore Services</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ELEVATED ESSENCE -->
+        <section class="section elevated-essence animated">
+            <h2 class="section-title ee-heading text-blue-900">Identity Option 3: Elevated Essence</h2>
+            
+            <!-- Color Palette -->
+            <div>
+                <h3 class="text-xl font-semibold mb-4">Color Palette</h3>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                    <div class="color-swatch" style="background-color: #003153;">
+                        <span class="swatch-name">Prussian Blue</span>
+                        <span class="swatch-hex">#003153</span>
+                    </div>
+                    <div class="color-swatch" style="background-color: #E9C46A;">
+                        <span class="swatch-name dark-text">Ochre Gold</span>
+                        <span class="swatch-hex dark-text">#E9C46A</span>
+                    </div>
+                    <div class="color-swatch" style="background-color: #B3583F;">
+                        <span class="swatch-name">Dusty Clay</span>
+                        <span class="swatch-hex">#B3583F</span>
+                    </div>
+                    <div class="color-swatch" style="background-color: #696D7D;">
+                        <span class="swatch-name">Slate Gray</span>
+                        <span class="swatch-hex">#696D7D</span>
+                    </div>
+                    <div class="color-swatch" style="background-color: #F5F5F4;">
+                        <span class="swatch-name dark-text">Bone White</span>
+                        <span class="swatch-hex dark-text">#F5F5F4</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Font Pairing -->
+            <div class="font-display animated delay-1">
+                <h3 class="text-xl font-semibold mb-4">Font Pairing</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="text-lg font-medium mb-3">Heading Font: Belgiano Serif</h4>
+                        <div class="p-4 bg-white rounded-lg shadow-sm">
+                            <p class="ee-heading text-4xl font-semibold">Belgiano Serif</p>
+                            <p class="ee-heading text-2xl mt-2">ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
+                            <p class="ee-heading text-xl mt-1">abcdefghijklmnopqrstuvwxyz</p>
+                            <p class="ee-heading text-xl mt-1">0123456789</p>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-medium mb-3">Body Font: Louis George Café</h4>
+                        <div class="p-4 bg-white rounded-lg shadow-sm">
+                            <p class="ee-body text-2xl font-normal">Louis George Café</p>
+                            <p class="ee-body text-lg mt-2">ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
+                            <p class="ee-body text-lg mt-1">abcdefghijklmnopqrstuvwxyz</p>
+                            <p class="ee-body text-lg mt-1">0123456789</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Preview Section -->
+            <div class="preview-section animated delay-2" style="background-color: #F4F1ED;">
+                <h3 class="text-xl font-semibold mb-6">Preview Layout</h3>
+                
+                <div class="hero-section" style="background-color: white; border: 1px solid #eaeaea;">
+                    <div class="hero-content text-center">
+                        <h2 class="ee-heading text-4xl md:text-5xl font-bold mb-4" style="color: #003153;">Your Next Move Starts Here</h2>
+                        <p class="ee-body text-lg md:text-xl mb-8 max-w-2xl mx-auto" style="color: #696D7D;">
+                            Elevate your business with refined strategy and purposeful direction. We help you distill your essence and amplify your impact.
+                        </p>
+                        <a href="#" class="btn btn-ee">Explore Services</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Footer -->
+        <footer class="text-center py-10 text-gray-500 text-sm">
+            <p>C-Salt Consulting Brand Identity Presentation</p>
+        </footer>
+    </div>
+    
+    <script>
+        // Reveal animations as user scrolls
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.section');
+            
+            function revealSections() {
+                sections.forEach((section, index) => {
+                    setTimeout(() => {
+                        section.classList.add('opacity-100');
+                    }, index * 200);
+                });
+            }
+            
+            revealSections();
+        });
+    </script>
+</body>
+</html>
